@@ -56,7 +56,7 @@ export function QeebaroPage() {
       <div className="container mx-auto px-6 py-6">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Retour à l'accueil
@@ -73,9 +73,9 @@ export function QeebaroPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-black/50 backdrop-blur-sm mb-8"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/80 backdrop-blur-sm mb-8"
           >
-            <span className="w-2 h-2 rounded-full bg-white/60" />
+            <span className="w-2 h-2 rounded-full bg-foreground/60" />
             <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
               Supervision opérationnelle
             </span>
@@ -110,6 +110,8 @@ export function QeebaroPage() {
           >
             <a
               href="mailto:pmo@bndsystems.com?subject=Démonstration Qeebaro"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-2 px-8 py-3.5 text-sm font-medium text-white bg-primary hover:bg-primary/90 rounded-md transition-all"
             >
               Demander une démonstration
@@ -119,20 +121,19 @@ export function QeebaroPage() {
               href="https://qeebaro.dixinn.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-8 py-3.5 text-sm font-medium text-white bg-white/10 hover:bg-white/15 border border-white/20 rounded-md transition-all"
+              className="flex items-center gap-2 px-8 py-3.5 text-sm font-medium text-foreground bg-foreground/10 hover:bg-foreground/[0.15] border border-foreground/20 rounded-md transition-all"
             >
               Créer un compte gratuit
             </a>
           </motion.div>
 
-          {/* Browser mockup screenshot */}
+          {/* Browser mockup screenshot — always dark */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
             className="relative w-full max-w-5xl"
           >
-            {/* Browser chrome */}
             <div className="rounded-t-xl border border-white/10 bg-[#1a1f2e] px-4 py-3 flex items-center gap-3">
               <div className="flex items-center gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-white/10" />
@@ -140,10 +141,9 @@ export function QeebaroPage() {
                 <div className="w-3 h-3 rounded-full bg-white/10" />
               </div>
               <div className="flex-1 h-6 rounded bg-white/5 flex items-center px-3">
-                <span className="text-xs text-muted-foreground/50 font-mono">app.qeebaro.io</span>
+                <span className="text-xs text-white/30 font-mono">app.qeebaro.io</span>
               </div>
             </div>
-            {/* Screenshot */}
             <div className="rounded-b-xl border-x border-b border-white/10 overflow-hidden bg-[#0d1829]">
               <img
                 src="/screenshots/qeebaro.png"
@@ -151,7 +151,6 @@ export function QeebaroPage() {
                 className="w-full block"
               />
             </div>
-            {/* Glow */}
             <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl -z-10 pointer-events-none" />
           </motion.div>
         </div>
@@ -187,7 +186,7 @@ export function QeebaroPage() {
                     <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
                     <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
                   </div>
-                  <span className="text-xs text-muted-foreground/50 font-mono ml-1">{item.label}</span>
+                  <span className="text-xs text-white/30 font-mono ml-1">{item.label}</span>
                 </div>
                 <div className="rounded-b-lg border-x border-b border-white/10 overflow-hidden">
                   <img src={item.src} alt={item.alt} className="w-full block" />
@@ -199,11 +198,11 @@ export function QeebaroPage() {
       </section>
 
       {/* À propos */}
-      <section className="border-t border-white/5 bg-surface">
+      <section className="border-t border-border bg-surface">
         <div className="container mx-auto px-6 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5">
-              <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-white mb-6 leading-[1.2]">
+              <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-foreground mb-6 leading-[1.2]">
                 La plateforme de supervision opérationnelle.
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -211,8 +210,8 @@ export function QeebaroPage() {
               </p>
             </div>
             <div className="lg:col-span-6 lg:col-start-7 flex items-center">
-              <div className="w-full p-8 rounded-2xl border border-white/5 bg-white/[0.02]">
-                <p className="text-2xl font-semibold text-white leading-snug">
+              <div className="w-full p-8 rounded-2xl border border-border bg-foreground/[0.02]">
+                <p className="text-2xl font-semibold text-foreground leading-snug">
                   "Moins d'angles morts.{" "}
                   <span className="text-muted-foreground">Plus de réactivité."</span>
                 </p>
@@ -223,7 +222,7 @@ export function QeebaroPage() {
       </section>
 
       {/* Features */}
-      <section className="border-t border-white/5 bg-background">
+      <section className="border-t border-border bg-background">
         <div className="container mx-auto px-6 py-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {FEATURES.map((feature, i) => (
@@ -233,12 +232,12 @@ export function QeebaroPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 rounded-2xl border border-white/5 bg-card hover:border-white/10 transition-colors"
+                className="p-8 rounded-2xl border border-border bg-card hover:border-border transition-colors"
               >
-                <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white mb-6">
+                <div className="w-12 h-12 rounded-lg bg-foreground/5 border border-foreground/10 flex items-center justify-center text-foreground mb-6">
                   <feature.icon className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-3">{feature.title}</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-3">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
@@ -250,13 +249,13 @@ export function QeebaroPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mt-6 p-8 rounded-2xl border border-white/5 bg-card hover:border-white/10 transition-colors flex flex-col md:flex-row items-start md:items-center gap-6"
+            className="mt-6 p-8 rounded-2xl border border-border bg-card hover:border-border transition-colors flex flex-col md:flex-row items-start md:items-center gap-6"
           >
-            <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white shrink-0">
+            <div className="w-12 h-12 rounded-lg bg-foreground/5 border border-foreground/10 flex items-center justify-center text-foreground shrink-0">
               <Plug className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-white mb-2">Une API ouverte pour vos outils existants.</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Une API ouverte pour vos outils existants.</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Connectez vos systèmes métier, vos capteurs IoT ou vos applications tierces sans friction. SSO entreprise disponible (Keycloak / OIDC).
               </p>
@@ -266,10 +265,10 @@ export function QeebaroPage() {
       </section>
 
       {/* Sectors */}
-      <section className="border-t border-white/5 bg-surface">
+      <section className="border-t border-border bg-surface">
         <div className="container mx-auto px-6 py-24">
           <div className="max-w-2xl mb-16">
-            <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-white mb-4 leading-[1.2]">
+            <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-foreground mb-4 leading-[1.2]">
               Ils pilotent avec Qeebaro
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -277,7 +276,7 @@ export function QeebaroPage() {
             </p>
           </div>
 
-          <div className="border border-white/5 rounded-2xl overflow-hidden">
+          <div className="border border-border rounded-2xl overflow-hidden">
             {SECTORS.map((row, i) => (
               <motion.div
                 key={i}
@@ -285,10 +284,10 @@ export function QeebaroPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="grid grid-cols-1 md:grid-cols-12 border-b border-white/5 last:border-b-0 hover:bg-white/[0.02] transition-colors"
+                className="grid grid-cols-1 md:grid-cols-12 border-b border-border last:border-b-0 hover:bg-foreground/[0.02] transition-colors"
               >
-                <div className="md:col-span-3 px-6 py-5 border-b md:border-b-0 md:border-r border-white/5 flex items-center">
-                  <span className="text-sm font-medium text-white">{row.sector}</span>
+                <div className="md:col-span-3 px-6 py-5 border-b md:border-b-0 md:border-r border-border flex items-center">
+                  <span className="text-sm font-medium text-foreground">{row.sector}</span>
                 </div>
                 <div className="md:col-span-9 px-6 py-5 flex items-center">
                   <span className="text-sm text-muted-foreground">{row.value}</span>
@@ -299,8 +298,8 @@ export function QeebaroPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="border-t border-white/5 bg-[#F0F4F8] text-slate-900 selection:bg-primary/20">
+      {/* CTA — forced light section */}
+      <section className="border-t border-border bg-[#F0F4F8] text-slate-900 selection:bg-primary/20">
         <div className="container mx-auto px-6 py-32 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 leading-[1.15]">
             Démarrez en quelques heures,{" "}
@@ -312,6 +311,8 @@ export function QeebaroPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="mailto:pmo@bndsystems.com?subject=Démonstration Qeebaro"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-2 px-8 py-4 text-sm font-medium text-white bg-primary hover:bg-primary/90 rounded-md transition-colors shadow-xl shadow-primary/20 w-full sm:w-auto"
             >
               Demander une démonstration
