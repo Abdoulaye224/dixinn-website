@@ -21,6 +21,8 @@ export function Vision() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="mailto:pmo@bndsystems.com?subject=Initier une conversation"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium text-white bg-primary hover:bg-navy-clair rounded-md transition-colors w-full sm:w-auto shadow-xl shadow-primary/20 relative overflow-hidden"
             >
               Initier une conversation
@@ -29,6 +31,8 @@ export function Vision() {
             </a>
             <a
               href="mailto:pmo@bndsystems.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center px-8 py-4 text-sm font-medium text-[#0B1B3D] hover:text-accent bg-transparent hover:bg-accent/5 rounded-md transition-colors w-full sm:w-auto"
             >
               Nous écrire

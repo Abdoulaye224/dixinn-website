@@ -13,17 +13,17 @@ function HomePage() {
     <main>
       <Hero />
 
-      <section id="solutions" className="min-h-screen border-t border-white/5 bg-surface relative overflow-hidden flex flex-col justify-center">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-[200px] bg-white/[0.02] blur-[100px] pointer-events-none" />
+      <section id="solutions" className="min-h-screen border-t border-border bg-surface relative overflow-hidden flex flex-col justify-center">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-[200px] bg-foreground/[0.02] blur-[100px] pointer-events-none" />
         <Solutions />
       </section>
 
-      <section id="approach" className="border-t border-white/5 bg-primary">
+      <section id="approach" className="border-t border-primary/30 bg-primary">
         <Approach />
       </section>
 
-      <section id="expertise" className="border-t border-white/5 bg-background">
+      <section id="expertise" className="border-t border-border bg-background">
         <Expertise />
       </section>
 
@@ -53,7 +53,7 @@ function WhatsAppButton() {
 
 function App() {
   return (
-    <div className="min-h-screen bg-background selection:bg-accent/30 selection:text-white">
+    <div className="min-h-screen bg-background selection:bg-accent/30 selection:text-foreground">
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

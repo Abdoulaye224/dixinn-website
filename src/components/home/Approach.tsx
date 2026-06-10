@@ -31,27 +31,25 @@ const STEPS = [
 
 export function Approach() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
-  // Track the scroll progress through this specific section
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"]
   });
 
-  // Calculate the height of the active line based on scroll progress
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <div ref={containerRef} className="container mx-auto px-6 py-32 md:py-48 relative">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
-        
-        {/* Left Side: Sticky Title */}
+
+        {/* Left Side: Sticky Title — always white text on dark navy bg */}
         <div className="lg:col-span-4">
           <div className="sticky top-32">
-            <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-foreground mb-6 leading-[1.2]">
+            <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-white mb-6 leading-[1.2]">
               L'Approche DixInn'
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-white/60 mb-8">
               Une méthodologie éprouvée qui transforme la technologie en véritable levier opérationnel.
             </p>
             <div className="hidden lg:block w-full h-px bg-white/10" />
@@ -60,10 +58,10 @@ export function Approach() {
 
         {/* Right Side: The Steps Flow */}
         <div className="lg:col-span-7 lg:col-start-6 relative">
-          
+
           {/* Background subtle track line */}
-          <div className="absolute top-0 bottom-0 left-[19px] w-px bg-white/5" />
-          
+          <div className="absolute top-0 bottom-0 left-[19px] w-px bg-white/10" />
+
           {/* Active glowing track line — orange */}
           <motion.div
             className="absolute top-0 left-[19px] w-px bg-accent origin-top"
@@ -73,9 +71,9 @@ export function Approach() {
           <div className="flex flex-col gap-24 md:gap-32 pb-32">
             {STEPS.map((step) => (
               <div key={step.num} className="relative pl-16">
-                
+
                 {/* Node */}
-                <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-background border border-accent/40 flex items-center justify-center z-10">
+                <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-[#0B1B3D] border border-accent/40 flex items-center justify-center z-10">
                   <div className="w-2 h-2 rounded-full bg-accent" />
                 </div>
 
@@ -89,10 +87,10 @@ export function Approach() {
                   <span className="text-sm font-mono text-accent/70 mb-3 block">
                     Étape {step.num}
                   </span>
-                  <h3 className="text-2xl font-semibold text-foreground mb-4">
+                  <h3 className="text-2xl font-semibold text-white mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
+                  <p className="text-lg text-white/60 leading-relaxed max-w-lg">
                     {step.desc}
                   </p>
                 </motion.div>

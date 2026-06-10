@@ -33,7 +33,7 @@ export function LawalPage() {
       <div className="container mx-auto px-6 py-6">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Retour à l'accueil
@@ -50,7 +50,7 @@ export function LawalPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-black/50 backdrop-blur-sm mb-8"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/80 backdrop-blur-sm mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
@@ -99,23 +99,23 @@ export function LawalPage() {
       </section>
 
       {/* À propos */}
-      <section className="border-t border-white/5 bg-surface">
+      <section className="border-t border-border bg-surface">
         <div className="container mx-auto px-6 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-white mb-6 leading-[1.2]">
+              <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-foreground mb-6 leading-[1.2]">
                 Conçu pour la Guinée et sa diaspora.
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Lawal fonctionne entièrement en local. Aucun compte, aucun serveur, aucun suivi. Vos lieux restent sur votre appareil, et restent vôtres.
               </p>
-              <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-white/10 bg-white/[0.03]">
-                <span className="text-2xl font-bold text-white">Gratuit.</span>
+              <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-border bg-foreground/[0.03]">
+                <span className="text-2xl font-bold text-foreground">Gratuit.</span>
                 <span className="text-lg text-muted-foreground">Pour toujours.</span>
               </div>
             </div>
             <div className="flex justify-center lg:justify-end">
-              {/* Phone mockup */}
+              {/* Phone mockup — always dark */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -144,7 +144,7 @@ export function LawalPage() {
       </section>
 
       {/* Features */}
-      <section className="border-t border-white/5 bg-background">
+      <section className="border-t border-border bg-background">
         <div className="container mx-auto px-6 py-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {FEATURES.map((feature, i) => (
@@ -154,12 +154,12 @@ export function LawalPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 rounded-2xl border border-white/5 bg-card hover:border-white/10 transition-colors"
+                className="p-8 rounded-2xl border border-border bg-card hover:border-border transition-colors"
               >
                 <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-6">
                   <feature.icon className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-3">{feature.title}</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-3">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
@@ -168,13 +168,13 @@ export function LawalPage() {
       </section>
 
       {/* Lawal Pro */}
-      <section className="border-t border-white/5 bg-surface">
+      <section className="border-t border-border bg-surface">
         <div className="container mx-auto px-6 py-24">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 mb-8">
               <span className="text-xs font-mono text-accent uppercase tracking-wider">Bientôt disponible</span>
             </div>
-            <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-white mb-6 leading-[1.2]">
+            <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-foreground mb-6 leading-[1.2]">
               Lawal Pro
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -193,7 +193,7 @@ export function LawalPage() {
                 "Tableau de bord partagé",
                 "Support dédié",
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+                <div key={i} className="flex items-center gap-3 p-4 rounded-xl border border-border bg-foreground/[0.02]">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                   <span className="text-sm text-muted-foreground">{item}</span>
                 </div>
@@ -202,7 +202,9 @@ export function LawalPage() {
 
             <a
               href="mailto:pmo@bndsystems.com?subject=Liste d'attente Lawal Pro"
-              className="group inline-flex items-center gap-2 px-8 py-3.5 text-sm font-medium text-white bg-white/10 hover:bg-white/15 border border-white/20 rounded-md transition-all"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 px-8 py-3.5 text-sm font-medium text-foreground bg-foreground/10 hover:bg-foreground/[0.15] border border-foreground/20 rounded-md transition-all"
             >
               Rejoindre la liste d'attente
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

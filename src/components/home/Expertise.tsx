@@ -50,7 +50,7 @@ export function Expertise() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 min-h-[400px]">
-        
+
         {/* Navigation List */}
         <div className="lg:col-span-5 flex flex-col gap-2">
           {EXPERTISES.map((item) => (
@@ -60,13 +60,13 @@ export function Expertise() {
               className={cn(
                 "flex items-center gap-4 p-4 rounded-xl text-left transition-all border",
                 activeId === item.id
-                  ? "bg-white/5 border-white/10"
-                  : "bg-transparent border-transparent hover:bg-white/[0.02]"
+                  ? "bg-foreground/5 border-foreground/10"
+                  : "bg-transparent border-transparent hover:bg-foreground/[0.02]"
               )}
             >
               <div className={cn(
                 "w-10 h-10 rounded-lg flex items-center justify-center transition-colors",
-                activeId === item.id ? "bg-white/10 text-foreground" : "bg-transparent text-muted-foreground"
+                activeId === item.id ? "bg-foreground/10 text-foreground" : "bg-transparent text-muted-foreground"
               )}>
                 <item.icon className="w-5 h-5" />
               </div>
@@ -83,7 +83,7 @@ export function Expertise() {
         </div>
 
         {/* Content Display */}
-        <div className="lg:col-span-7 lg:pl-12 border-t lg:border-t-0 lg:border-l border-white/5 pt-8 lg:pt-0 flex flex-col justify-center">
+        <div className="lg:col-span-7 lg:pl-12 border-t lg:border-t-0 lg:border-l border-border pt-8 lg:pt-0 flex flex-col justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeExpertise.id}
@@ -92,7 +92,7 @@ export function Expertise() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-foreground mb-6">
+              <div className="w-12 h-12 rounded-lg bg-foreground/5 border border-foreground/10 flex items-center justify-center text-foreground mb-6">
                 <activeExpertise.icon className="w-6 h-6" />
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-4">
@@ -101,12 +101,12 @@ export function Expertise() {
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 {activeExpertise.content}
               </p>
-              
+
               <div className="flex flex-wrap gap-2">
                 {activeExpertise.tags.map((tag, i) => (
-                  <span 
+                  <span
                     key={i}
-                    className="px-3 py-1.5 rounded-md text-xs font-mono text-muted-foreground bg-white/5 border border-white/5"
+                    className="px-3 py-1.5 rounded-md text-xs font-mono text-muted-foreground bg-foreground/5 border border-border"
                   >
                     {tag}
                   </span>
@@ -115,7 +115,7 @@ export function Expertise() {
             </motion.div>
           </AnimatePresence>
         </div>
-        
+
       </div>
     </div>
   );
