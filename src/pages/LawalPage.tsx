@@ -42,7 +42,7 @@ export function LawalPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden pb-24">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1E293B_1px,transparent_1px),linear-gradient(to_bottom,#1E293B_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-[0.1] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1A2F5E_1px,transparent_1px),linear-gradient(to_bottom,#1A2F5E_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-[0.1] pointer-events-none" />
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[160px] pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
@@ -62,7 +62,7 @@ export function LawalPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.15] max-w-4xl"
+            className="text-4xl md:text-5xl lg:text-[3rem] font-extrabold tracking-tight text-white mb-6 leading-[1.1] max-w-4xl"
           >
             Capturez et partagez vos positions,{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-muted-foreground">
@@ -101,7 +101,7 @@ export function LawalPage() {
         <div className="container mx-auto px-6 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+              <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-white mb-6 leading-[1.2]">
                 Conçu pour la Guinée et sa diaspora.
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -172,7 +172,7 @@ export function LawalPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 mb-8">
               <span className="text-xs font-mono text-accent uppercase tracking-wider">Bientôt disponible</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-white mb-6 leading-[1.2]">
               Lawal Pro
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">

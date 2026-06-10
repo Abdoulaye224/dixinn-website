@@ -19,7 +19,7 @@ function HomePage() {
         <Solutions />
       </section>
 
-      <section id="approach" className="border-t border-white/5 bg-[#0A111C]">
+      <section id="approach" className="border-t border-white/5 bg-primary">
         <Approach />
       </section>
 

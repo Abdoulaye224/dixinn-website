@@ -48,7 +48,7 @@ export function Approach() {
         {/* Left Side: Sticky Title */}
         <div className="lg:col-span-4">
           <div className="sticky top-32">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-white mb-6 leading-[1.2]">
               L'Approche DixInn'
             </h2>
             <p className="text-lg text-muted-foreground mb-8">

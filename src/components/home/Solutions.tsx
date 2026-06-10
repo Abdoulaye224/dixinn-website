@@ -6,7 +6,7 @@ export function Solutions() {
   return (
     <div className="container mx-auto px-6 py-24 md:py-32 relative z-10">
       <div className="max-w-2xl mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+        <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-white mb-4 leading-[1.2]">
           L'Écosystème DixInn'
         </h2>
         <p className="text-lg text-muted-foreground">

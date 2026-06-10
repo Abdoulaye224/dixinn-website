@@ -2,11 +2,11 @@ import { ArrowRight } from "lucide-react";
 
 export function Vision() {
   return (
-    <div className="bg-[#F8FAFC] text-slate-900 selection:bg-primary/20 selection:text-primary">
+    <div className="bg-[#F0F4F8] text-slate-900 selection:bg-primary/20 selection:text-primary">
       <div className="container mx-auto px-6 py-32 md:py-48">
         <div className="max-w-4xl mx-auto text-center">
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 leading-[1.15]">
+          <h2 className="text-4xl md:text-5xl lg:text-[3rem] font-extrabold tracking-tight mb-8 leading-[1.1]">
             Construire aujourd'hui les fondations de votre{" "}
             <span className="text-primary">résilience numérique.</span>
           </h2>
