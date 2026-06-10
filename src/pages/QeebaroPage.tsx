@@ -106,7 +106,7 @@ export function QeebaroPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-start gap-4"
+            className="flex flex-col sm:flex-row items-start gap-4 mb-16"
           >
             <a
               href="mailto:contact@dixinn.com?subject=Démonstration Qeebaro"
@@ -121,6 +121,36 @@ export function QeebaroPage() {
             >
               Créer un compte gratuit
             </a>
+          </motion.div>
+
+          {/* Browser mockup screenshot */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="relative w-full max-w-5xl"
+          >
+            {/* Browser chrome */}
+            <div className="rounded-t-xl border border-white/10 bg-[#1a1f2e] px-4 py-3 flex items-center gap-3">
+              <div className="flex items-center gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-white/10" />
+                <div className="w-3 h-3 rounded-full bg-white/10" />
+                <div className="w-3 h-3 rounded-full bg-white/10" />
+              </div>
+              <div className="flex-1 h-6 rounded bg-white/5 flex items-center px-3">
+                <span className="text-xs text-muted-foreground/50 font-mono">app.qeebaro.io</span>
+              </div>
+            </div>
+            {/* Screenshot */}
+            <div className="rounded-b-xl border-x border-b border-white/10 overflow-hidden bg-[#0d1829]">
+              <img
+                src="/screenshots/qeebaro.png"
+                alt="Interface Qeebaro — carte de supervision des actifs terrain"
+                className="w-full block"
+              />
+            </div>
+            {/* Glow */}
+            <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl -z-10 pointer-events-none" />
           </motion.div>
         </div>
       </section>

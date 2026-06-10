@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Share2, WifiOff, Lock, ArrowLeft, Smartphone } from "lucide-react";
+import { ArrowRight, MapPin, Share2, WifiOff, Lock, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const FEATURES = [
@@ -113,9 +113,29 @@ export function LawalPage() {
               </div>
             </div>
             <div className="flex justify-center lg:justify-end">
-              <div className="w-48 h-48 rounded-3xl border border-white/10 bg-white/[0.03] flex items-center justify-center">
-                <Smartphone className="w-20 h-20 text-muted-foreground/40" />
-              </div>
+              {/* Phone mockup */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative"
+              >
+                <div className="w-[260px] rounded-[2.5rem] border-[6px] border-white/10 bg-[#1a1f2e] overflow-hidden shadow-2xl shadow-black/50">
+                  {/* Notch */}
+                  <div className="relative bg-[#111827]">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1f2e] rounded-b-2xl z-10" />
+                  </div>
+                  {/* Screenshot */}
+                  <img
+                    src="/screenshots/lawal.png"
+                    alt="Interface Lawal — capture et partage de position GPS"
+                    className="w-full block"
+                  />
+                </div>
+                {/* Glow */}
+                <div className="absolute -inset-6 bg-accent/5 rounded-full blur-3xl -z-10 pointer-events-none" />
+              </motion.div>
             </div>
           </div>
         </div>
