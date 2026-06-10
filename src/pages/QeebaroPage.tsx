@@ -155,6 +155,47 @@ export function QeebaroPage() {
         </div>
       </section>
 
+      {/* Additional screenshots — dashboard & events */}
+      <section className="bg-background">
+        <div className="container mx-auto px-6 pb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                src: "/screenshots/qeebaro-dashboard.png",
+                alt: "Tableau de bord Qeebaro — événements, alarmes actives, assets et mesures",
+                label: "Tableau de bord",
+              },
+              {
+                src: "/screenshots/qeebaro-event.png",
+                alt: "Vue Gantt Qeebaro — planification et suivi des événements terrain",
+                label: "Vue Gantt des événements",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group relative"
+              >
+                <div className="rounded-t-lg border border-white/10 bg-[#1a1f2e] px-3 py-2 flex items-center gap-2">
+                  <div className="flex items-center gap-1">
+                    <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                  </div>
+                  <span className="text-xs text-muted-foreground/50 font-mono ml-1">{item.label}</span>
+                </div>
+                <div className="rounded-b-lg border-x border-b border-white/10 overflow-hidden">
+                  <img src={item.src} alt={item.alt} className="w-full block" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* À propos */}
       <section className="border-t border-white/5 bg-[#080E17]">
         <div className="container mx-auto px-6 py-24">

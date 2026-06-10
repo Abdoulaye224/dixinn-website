@@ -53,25 +53,25 @@ export function Navbar() {
           : "bg-transparent border-transparent py-6"
       )}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container mx-auto px-6 flex items-center gap-10">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3 shrink-0">
           <div className="w-8 h-8 rounded border border-white/20 bg-white/5 flex items-center justify-center">
             <span className="text-white font-bold font-sans text-sm">D'</span>
           </div>
           <span className="text-xl font-semibold tracking-tight text-white">DixInn'</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        {/* Desktop Navigation — left-aligned next to logo */}
+        <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <Link
+            <a
               key={link.name}
-              to={link.href}
+              href={link.href}
               className="text-sm font-medium text-muted-foreground hover:text-white transition-colors"
             >
               {link.name}
-            </Link>
+            </a>
           ))}
 
           {/* Solutions dropdown */}
@@ -88,7 +88,7 @@ export function Navbar() {
             </button>
 
             {isSolutionsOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 rounded-xl border border-white/10 bg-black/90 backdrop-blur-xl shadow-2xl overflow-hidden">
+              <div className="absolute top-full left-0 mt-3 w-56 rounded-xl border border-white/10 bg-black/90 backdrop-blur-xl shadow-2xl overflow-hidden">
                 {SOLUTIONS.map((sol) => (
                   <Link
                     key={sol.name}
@@ -113,8 +113,8 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center">
+        {/* CTA — pushed to the right */}
+        <div className="hidden md:flex items-center ml-auto">
           <a
             href="mailto:contact@dixinn.com"
             className="group relative inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium text-white bg-primary rounded-md overflow-hidden transition-all hover:bg-primary/90"
@@ -126,7 +126,7 @@ export function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-white ml-auto"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -137,13 +137,14 @@ export function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-black border-b border-border py-4 px-6 flex flex-col space-y-4 shadow-xl">
           {NAV_LINKS.map((link) => (
-            <Link
+            <a
               key={link.name}
-              to={link.href}
+              href={link.href}
               className="text-sm font-medium text-muted-foreground hover:text-white transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
-            </Link>
+            </a>
           ))}
           <div className="border-t border-white/5 pt-4">
             <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-3">Solutions</p>
