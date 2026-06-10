@@ -85,10 +85,10 @@ export function QeebaroPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-[3rem] font-extrabold tracking-tight text-white mb-6 leading-[1.1] max-w-4xl"
+            className="text-4xl md:text-5xl lg:text-[3rem] font-extrabold tracking-tight text-foreground mb-6 leading-[1.1] max-w-4xl"
           >
             Qeebaro unifie vos actifs, vos alertes et vos données terrain sur une{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-muted-foreground">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground to-muted-foreground">
               carte vivante.
             </span>
           </motion.h1>
@@ -109,14 +109,16 @@ export function QeebaroPage() {
             className="flex flex-col sm:flex-row items-start gap-4 mb-16"
           >
             <a
-              href="mailto:contact@dixinn.com?subject=Démonstration Qeebaro"
+              href="mailto:pmo@bndsystems.com?subject=Démonstration Qeebaro"
               className="group flex items-center gap-2 px-8 py-3.5 text-sm font-medium text-white bg-primary hover:bg-primary/90 rounded-md transition-all"
             >
               Demander une démonstration
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="mailto:contact@dixinn.com?subject=Compte Qeebaro"
+              href="https://qeebaro.dixinn.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-8 py-3.5 text-sm font-medium text-white bg-white/10 hover:bg-white/15 border border-white/20 rounded-md transition-all"
             >
               Créer un compte gratuit
@@ -309,14 +311,16 @@ export function QeebaroPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:contact@dixinn.com?subject=Démonstration Qeebaro"
+              href="mailto:pmo@bndsystems.com?subject=Démonstration Qeebaro"
               className="group flex items-center gap-2 px-8 py-4 text-sm font-medium text-white bg-primary hover:bg-primary/90 rounded-md transition-colors shadow-xl shadow-primary/20 w-full sm:w-auto"
             >
               Demander une démonstration
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="mailto:contact@dixinn.com?subject=Compte Qeebaro"
+              href="https://qeebaro.dixinn.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-8 py-4 text-sm font-medium text-slate-700 bg-transparent hover:bg-slate-100 rounded-md transition-colors w-full sm:w-auto"
             >
               Créer un compte gratuit

@@ -62,10 +62,10 @@ export function LawalPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-[3rem] font-extrabold tracking-tight text-white mb-6 leading-[1.1] max-w-4xl"
+            className="text-4xl md:text-5xl lg:text-[3rem] font-extrabold tracking-tight text-foreground mb-6 leading-[1.1] max-w-4xl"
           >
             Capturez et partagez vos positions,{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-muted-foreground">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground to-muted-foreground">
               sans adresse.
             </span>
           </motion.h1>
@@ -86,7 +86,9 @@ export function LawalPage() {
             className="flex flex-col sm:flex-row items-start gap-4"
           >
             <a
-              href="#"
+              href="https://lawal.dixinn.com/#download"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-2 px-8 py-3.5 text-sm font-medium text-white bg-accent hover:bg-accent/90 rounded-md transition-all"
             >
               Télécharger Lawal
@@ -199,7 +201,7 @@ export function LawalPage() {
             </div>
 
             <a
-              href="mailto:contact@dixinn.com?subject=Liste d'attente Lawal Pro"
+              href="mailto:pmo@bndsystems.com?subject=Liste d'attente Lawal Pro"
               className="group inline-flex items-center gap-2 px-8 py-3.5 text-sm font-medium text-white bg-white/10 hover:bg-white/15 border border-white/20 rounded-md transition-all"
             >
               Rejoindre la liste d'attente

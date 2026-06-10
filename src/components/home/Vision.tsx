@@ -20,7 +20,7 @@ export function Vision() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:contact@dixinn.com?subject=Initier une conversation"
+              href="mailto:pmo@bndsystems.com?subject=Initier une conversation"
               className="group flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium text-white bg-primary hover:bg-navy-clair rounded-md transition-colors w-full sm:w-auto shadow-xl shadow-primary/20 relative overflow-hidden"
             >
               Initier une conversation
@@ -28,10 +28,10 @@ export function Vision() {
               <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
             </a>
             <a
-              href="mailto:contact@dixinn.com"
+              href="mailto:pmo@bndsystems.com"
               className="flex items-center justify-center px-8 py-4 text-sm font-medium text-[#0B1B3D] hover:text-accent bg-transparent hover:bg-accent/5 rounded-md transition-colors w-full sm:w-auto"
             >
-              contact@dixinn.com
+              Nous écrire
             </a>
           </div>
 
