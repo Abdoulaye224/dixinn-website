@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Sun, Moon } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/Logo";
+import { useThemeContext } from "@/context/ThemeContext";
 
 const SOLUTIONS = [
   { name: "Qeebaro", href: "/qeebaro", desc: "Supervision opérationnelle" },
@@ -20,6 +22,8 @@ export function Navbar() {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const { theme, toggle } = useThemeContext();
+  const isDark = theme === "dark";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -49,26 +53,26 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
         isScrolled
-          ? "bg-black/80 backdrop-blur-md border-border py-4"
+          ? isDark
+            ? "bg-black/80 backdrop-blur-md border-border py-4"
+            : "bg-white/80 backdrop-blur-md border-border py-4"
           : "bg-transparent border-transparent py-6"
       )}
     >
       <div className="container mx-auto px-6 flex items-center gap-10">
+
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 shrink-0">
-          <div className="w-8 h-8 rounded border border-white/20 bg-white/5 flex items-center justify-center">
-            <span className="text-white font-bold font-sans text-sm">D'</span>
-          </div>
-          <span className="text-xl font-semibold tracking-tight text-white">DixInn'</span>
+        <Link to="/" className="flex items-center shrink-0">
+          <Logo className={cn("h-7 w-auto", isDark ? "text-white" : "text-[#0B1B3D]")} />
         </Link>
 
-        {/* Desktop Navigation — left-aligned next to logo */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-white transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.name}
             </a>
@@ -80,7 +84,7 @@ export function Navbar() {
               onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
               className={cn(
                 "flex items-center gap-1 text-sm font-medium transition-colors",
-                isSolutionsOpen ? "text-white" : "text-muted-foreground hover:text-white"
+                isSolutionsOpen ? "text-foreground" : "text-muted-foreground hover:text-foreground"
               )}
             >
               Solutions
@@ -88,14 +92,19 @@ export function Navbar() {
             </button>
 
             {isSolutionsOpen && (
-              <div className="absolute top-full left-0 mt-3 w-56 rounded-xl border border-white/10 bg-black/90 backdrop-blur-xl shadow-2xl overflow-hidden">
+              <div className={cn(
+                "absolute top-full left-0 mt-3 w-56 rounded-xl border shadow-2xl overflow-hidden",
+                isDark
+                  ? "border-white/10 bg-black/90 backdrop-blur-xl"
+                  : "border-border bg-white"
+              )}>
                 {SOLUTIONS.map((sol) => (
                   <Link
                     key={sol.name}
                     to={sol.href}
-                    className="flex flex-col px-4 py-3 hover:bg-white/5 transition-colors border-b border-white/5 last:border-b-0"
+                    className="flex flex-col px-4 py-3 hover:bg-accent/5 transition-colors border-b border-border last:border-b-0"
                   >
-                    <span className="text-sm font-medium text-white">{sol.name}</span>
+                    <span className="text-sm font-medium text-foreground">{sol.name}</span>
                     <span className="text-xs text-muted-foreground mt-0.5">{sol.desc}</span>
                   </Link>
                 ))}
@@ -103,9 +112,9 @@ export function Navbar() {
                   <a
                     href="#solutions"
                     onClick={() => setIsSolutionsOpen(false)}
-                    className="flex flex-col px-4 py-3 hover:bg-white/5 transition-colors border-t border-white/10"
+                    className="flex flex-col px-4 py-3 hover:bg-accent/5 transition-colors border-t border-border"
                   >
-                    <span className="text-xs text-muted-foreground">Voir tout l'écosystème →</span>
+                    <span className="text-xs text-accent font-medium">Voir tout l'écosystème →</span>
                   </a>
                 )}
               </div>
@@ -113,46 +122,73 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* CTA — pushed to the right */}
-        <div className="hidden md:flex items-center ml-auto">
+        {/* Right side — theme toggle + CTA */}
+        <div className="hidden md:flex items-center gap-3 ml-auto">
+          {/* Theme toggle */}
+          <button
+            onClick={toggle}
+            aria-label={isDark ? "Passer en mode clair" : "Passer en mode sombre"}
+            className={cn(
+              "w-9 h-9 rounded-lg flex items-center justify-center transition-colors",
+              isDark
+                ? "text-muted-foreground hover:text-white hover:bg-white/10"
+                : "text-muted-foreground hover:text-foreground hover:bg-black/5"
+            )}
+          >
+            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+
           <a
             href="mailto:contact@dixinn.com"
-            className="group relative inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium text-white bg-primary rounded-md overflow-hidden transition-all hover:bg-primary/90"
+            className="group relative inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium text-white bg-primary hover:bg-navy-clair rounded-md overflow-hidden transition-all"
           >
             <span>Nous contacter</span>
-            <div className="absolute inset-0 border border-white/10 rounded-md pointer-events-none transition-all group-hover:border-accent/50" />
+            {/* Orange bottom accent */}
+            <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden text-white ml-auto"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile: theme toggle + hamburger */}
+        <div className="md:hidden flex items-center gap-2 ml-auto">
+          <button
+            onClick={toggle}
+            aria-label="Changer de thème"
+            className="w-9 h-9 rounded-lg flex items-center justify-center text-muted-foreground"
+          >
+            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+          <button
+            className="text-foreground"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-black border-b border-border py-4 px-6 flex flex-col space-y-4 shadow-xl">
+        <div className={cn(
+          "md:hidden absolute top-full left-0 right-0 border-b py-4 px-6 flex flex-col space-y-4 shadow-xl",
+          isDark ? "bg-black border-border" : "bg-white border-border"
+        )}>
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-white transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
             </a>
           ))}
-          <div className="border-t border-white/5 pt-4">
+          <div className="border-t border-border pt-4">
             <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-3">Solutions</p>
             {SOLUTIONS.map((sol) => (
               <Link
                 key={sol.name}
                 to={sol.href}
-                className="flex items-center justify-between py-2 text-sm font-medium text-muted-foreground hover:text-white transition-colors"
+                className="flex items-center justify-between py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 <span>{sol.name}</span>
                 <span className="text-xs text-muted-foreground/60">{sol.desc}</span>

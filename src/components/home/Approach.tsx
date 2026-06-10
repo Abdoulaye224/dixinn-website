@@ -48,7 +48,7 @@ export function Approach() {
         {/* Left Side: Sticky Title */}
         <div className="lg:col-span-4">
           <div className="sticky top-32">
-            <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-white mb-6 leading-[1.2]">
+            <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-foreground mb-6 leading-[1.2]">
               L'Approche DixInn'
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
@@ -64,9 +64,9 @@ export function Approach() {
           {/* Background subtle track line */}
           <div className="absolute top-0 bottom-0 left-[19px] w-px bg-white/5" />
           
-          {/* Active glowing track line */}
-          <motion.div 
-            className="absolute top-0 left-[19px] w-px bg-white origin-top"
+          {/* Active glowing track line — orange */}
+          <motion.div
+            className="absolute top-0 left-[19px] w-px bg-accent origin-top"
             style={{ height: lineHeight }}
           />
 
@@ -75,10 +75,10 @@ export function Approach() {
               <div key={step.num} className="relative pl-16">
                 
                 {/* Node */}
-                <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-background border border-white/20 flex items-center justify-center z-10">
-                  <div className="w-2 h-2 rounded-full bg-white" />
+                <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-background border border-accent/40 flex items-center justify-center z-10">
+                  <div className="w-2 h-2 rounded-full bg-accent" />
                 </div>
-                
+
                 {/* Content */}
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
@@ -86,10 +86,10 @@ export function Approach() {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.5 }}
                 >
-                  <span className="text-sm font-mono text-muted-foreground mb-3 block">
+                  <span className="text-sm font-mono text-accent/70 mb-3 block">
                     Étape {step.num}
                   </span>
-                  <h3 className="text-2xl font-semibold text-white mb-4">
+                  <h3 className="text-2xl font-semibold text-foreground mb-4">
                     {step.title}
                   </h3>
                   <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">

@@ -197,7 +197,7 @@ export function QeebaroPage() {
       </section>
 
       {/* À propos */}
-      <section className="border-t border-white/5 bg-[#080E17]">
+      <section className="border-t border-white/5 bg-surface">
         <div className="container mx-auto px-6 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5">
@@ -264,7 +264,7 @@ export function QeebaroPage() {
       </section>
 
       {/* Sectors */}
-      <section className="border-t border-white/5 bg-[#080E17]">
+      <section className="border-t border-white/5 bg-surface">
         <div className="container mx-auto px-6 py-24">
           <div className="max-w-2xl mb-16">
             <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-white mb-4 leading-[1.2]">

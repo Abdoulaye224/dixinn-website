@@ -33,10 +33,14 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-[3rem] font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl lg:text-[3rem] font-extrabold tracking-tight text-foreground mb-6 leading-[1.1]">
               Catalyseur de votre{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-muted-foreground">
-                transformation digitale
+              <span className="relative inline-block">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground to-muted-foreground">
+                  transformation digitale
+                </span>
+                {/* orange underline accent */}
+                <span className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full bg-accent opacity-70" />
               </span>
             </h1>
           </motion.div>
@@ -107,7 +111,7 @@ export function Hero() {
                   <item.icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-white">{item.title}</h3>
+                  <h3 className="text-sm font-medium text-foreground">{item.title}</h3>
                   <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
                     {item.desc}
                   </p>

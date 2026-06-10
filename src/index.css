@@ -29,6 +29,7 @@
   --color-accent:              #FF6B00;
   --color-accent-foreground:   #FFFFFF;
   --color-accent-hover:        #FFBC33;
+  --color-surface:             #080E17;
   --color-card:                #0B1B3D;
   --color-card-foreground:     #FFFFFF;
   --color-border:              #1A2F5E;
@@ -51,6 +52,25 @@
   --text-body-sm:     0.75rem;    /* 12px — métadonnées          */
   --text-mono-md:     0.8125rem;  /* 13px — IDs, coordonnées     */
   --text-mono-sm:     0.6875rem;  /* 11px — valeurs capteurs     */
+}
+
+/* ── Thème light — appliqué via data-theme="light" sur <html> ── */
+:root[data-theme="light"] {
+  --color-background:          #F0F4F8;
+  --color-foreground:          #050B14;
+  --color-primary:             #0B1B3D;
+  --color-primary-foreground:  #FFFFFF;
+  --color-secondary:           #E2E8F2;
+  --color-secondary-foreground:#050B14;
+  --color-accent:              #FF6B00;
+  --color-accent-foreground:   #FFFFFF;
+  --color-accent-hover:        #CC5500;
+  --color-card:                #FFFFFF;
+  --color-card-foreground:     #050B14;
+  --color-border:              #C8D3E1;
+  --color-muted:               #E2E8F2;
+  --color-muted-foreground:    #4A6380;
+  --color-surface:             #E8EEF5;
 }
 
 @layer base {

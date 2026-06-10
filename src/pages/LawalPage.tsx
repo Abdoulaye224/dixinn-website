@@ -97,7 +97,7 @@ export function LawalPage() {
       </section>
 
       {/* À propos */}
-      <section className="border-t border-white/5 bg-[#080E17]">
+      <section className="border-t border-white/5 bg-surface">
         <div className="container mx-auto px-6 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -166,7 +166,7 @@ export function LawalPage() {
       </section>
 
       {/* Lawal Pro */}
-      <section className="border-t border-white/5 bg-[#080E17]">
+      <section className="border-t border-white/5 bg-surface">
         <div className="container mx-auto px-6 py-24">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 mb-8">
