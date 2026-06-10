@@ -41,7 +41,7 @@ export function Expertise() {
   return (
     <div className="container mx-auto px-6 py-24 md:py-32">
       <div className="max-w-2xl mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+        <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold tracking-tight text-foreground mb-4 leading-[1.2]">
           Expertise technique & métier
         </h2>
         <p className="text-lg text-muted-foreground">
@@ -66,14 +66,14 @@ export function Expertise() {
             >
               <div className={cn(
                 "w-10 h-10 rounded-lg flex items-center justify-center transition-colors",
-                activeId === item.id ? "bg-white/10 text-white" : "bg-transparent text-muted-foreground"
+                activeId === item.id ? "bg-white/10 text-foreground" : "bg-transparent text-muted-foreground"
               )}>
                 <item.icon className="w-5 h-5" />
               </div>
               <div>
                 <h3 className={cn(
                   "font-medium transition-colors",
-                  activeId === item.id ? "text-white" : "text-muted-foreground"
+                  activeId === item.id ? "text-foreground" : "text-muted-foreground"
                 )}>
                   {item.title}
                 </h3>
@@ -92,10 +92,10 @@ export function Expertise() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white mb-6">
+              <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-foreground mb-6">
                 <activeExpertise.icon className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-2xl font-bold text-foreground mb-4">
                 {activeExpertise.title}
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">

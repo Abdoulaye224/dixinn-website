@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-12 overflow-hidden">
       {/* Abstract Background Grid (Softened for breathability) */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1E293B_1px,transparent_1px),linear-gradient(to_bottom,#1E293B_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-[0.15] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1A2F5E_1px,transparent_1px),linear-gradient(to_bottom,#1A2F5E_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-[0.15] pointer-events-none" />
 
       {/* Decorative Nodes (Subtle, not overly flashy) */}
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
@@ -33,10 +33,14 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
+            <h1 className="text-4xl md:text-5xl lg:text-[3rem] font-extrabold tracking-tight text-foreground mb-6 leading-[1.1]">
               Catalyseur de votre{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-muted-foreground">
-                transformation digitale
+              <span className="relative inline-block">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground to-muted-foreground">
+                  transformation digitale
+                </span>
+                {/* orange underline accent */}
+                <span className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full bg-accent opacity-70" />
               </span>
             </h1>
           </motion.div>
@@ -107,7 +111,7 @@ export function Hero() {
                   <item.icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-white">{item.title}</h3>
+                  <h3 className="text-sm font-medium text-foreground">{item.title}</h3>
                   <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
                     {item.desc}
                   </p>
